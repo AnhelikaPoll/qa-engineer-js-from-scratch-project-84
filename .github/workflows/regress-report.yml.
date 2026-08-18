@@ -1,0 +1,241 @@
+---
+test-cases:
+  - summary: |
+      Успешный поиск товаров по ключевому слову
+    status: pass
+
+  - summary: |
+      Поиск товаров по несуществующему ключевому слову
+    status: pass
+
+  - summary: |
+      Успешная фильтрация товаров по категории
+    status: pass
+
+  - summary: |
+      Просмотр подробной информации о товаре
+    status: pass
+
+  - summary: |
+      Добавление товара в корзину со страницы товара
+    status: pass
+
+  - summary: |
+      Добавление нескольких товаров в корзину
+    status: pass
+
+  - summary: |
+      Просмотр содержимого корзины с товарами
+    status: pass
+
+  - summary: |
+      Просмотр пустой корзины
+    status: pass
+
+  - summary: |
+      Удаление товара из корзины
+    status: pass
+
+  - summary: |
+      Переключение языка интерфейса на английский
+    status: pass
+
+  - summary: |
+      Переключение языка интерфейса на русский
+    status: fail
+
+  - summary: |
+      Удобство использования — наличие поиска и фильтрации на видном месте
+    status: pass
+
+  - summary: |
+      Удобство использования — понятные подписи к элементам
+    status: pass
+
+  - summary: |
+      Скорость работы — время загрузки главной страницы
+    status: fail
+
+  - summary: |
+      Скорость работы — время ответа при поиске и фильтрации
+    status: pass
+
+  - summary: |
+      Безопасность — использование HTTPS
+    status: pass
+
+  - summary: |
+      Безопасность — отсутствие передачи конфиденциальных данных в открытом виде
+    status: pass
+
+  - summary: |
+      Наличие мобильной версии — корректное отображение на мобильном устройстве
+    status: fail
+
+  - summary: |
+      Наличие мобильной версии — работа функционала на мобильном устройстве
+    status: fail
+
+  - summary: |
+      Совместимость с браузерами — Google Chrome (последняя версия)
+    status: pass
+
+  - summary: |
+      Совместимость с браузерами — Mozilla Firefox (последняя версия)
+    status: pass
+
+  - summary: |
+      Совместимость с браузерами — Apple Safari (последняя версия)
+    status: pass
+
+  - summary: |
+      Совместимость с браузерами — Microsoft Edge (последняя версия)
+    status: pass
+
+  - summary: |
+      Обработка большого трафика — стабильность работы при нагрузке
+    status: fail
+
+  - summary: |
+      Доступность на различных устройствах — десктоп
+    status: fail
+
+  - summary: |
+      Доступность на различных устройствах — планшет
+    status: pass
+
+  - summary: |
+      Доступность без VPN — открытие сайта из разных регионов
+    status: pass
+
+  - summary: |
+      Сохранение состояния корзины после перезагрузки страницы
+    status: pass
+
+  - summary: |
+      Сохранение состояния корзины после закрытия и повторного открытия браузера
+    status: pass
+
+  - summary: |
+      Обратная связь при добавлении товара в корзину
+    status: fail
+
+  - summary: |
+      Обратная связь при удалении товара из корзины
+    status: fail
+
+  - summary: |
+      Обработка пустых результатов поиска
+    status: pass
+
+  - summary: |
+      Стабильность вёрстки — отсутствие сдвигов контента при загрузке
+    status: fail
+
+bugreports:
+  - summary: |
+      Частичное улучшение LCP, но все ещё превышает порог в 3 секунды
+    environment: |
+      Google Chrome (последняя стабильная версия)
+      ОС: любая
+      URL: https://products-store-v2.hexlet.app
+    steps-to-reproduce: |
+      1. Открыть сайт https://products-store-v2.hexlet.app.
+      2. Открыть DevTools → вкладка "Lighthouse" или "Performance".
+      3. Запустить анализ производительности.
+      4. Зафиксировать значение LCP.
+    expected-result: |
+      LCP должен быть не более 3 секунд.
+    actual-result: |
+      LCP составляет 3.22 секунды (метрика "needs improvement"). Самый крупный элемент – `img.card-img-top.object-cover`.
+
+  - summary: |
+      Частичное улучшение CLS, но все ещё превышает порог в 0.1
+    environment: |
+      Google Chrome (последняя стабильная версия)
+      ОС: любая
+      URL: https://products-store-v2.hexlet.app
+    steps-to-reproduce: |
+      1. Открыть сайт https://products-store-v2.hexlet.app.
+      2. Открыть DevTools → вкладка "Lighthouse" или "Performance".
+      3. Запустить анализ производительности.
+      4. Зафиксировать значение CLS.
+    expected-result: |
+      CLS должен быть не более 0.1.
+    actual-result: |
+      CLS составляет 0.31 (метрика "poor"). Зафиксирован один значительный сдвиг (worst cluster: 1 shift).
+
+  - summary: |
+      Ошибка 500 при запросе к /orders (не исправлена)
+    environment: |
+      Google Chrome (последняя стабильная версия)
+      ОС: любая
+      URL: https://products-store-v2.hexlet.app
+    steps-to-reproduce: |
+      1. Открыть сайт https://products-store-v2.hexlet.app.
+      2. Открыть DevTools → вкладка Network.
+      3. Обновить страницу.
+      4. Найти в списке запросов "orders".
+    expected-result: |
+      Запрос к /orders должен возвращать статус 200.
+    actual-result: |
+      Запрос к /orders возвращает статус 500 (Internal Server Error).
+
+  - summary: |
+      Ошибка 500 при загрузке SVG-иконки (новый баг)
+    environment: |
+      Google Chrome (последняя стабильная версия)
+      ОС: любая
+      URL: https://products-store-v2.hexlet.app
+    steps-to-reproduce: |
+      1. Открыть сайт https://products-store-v2.hexlet.app.
+      2. Открыть DevTools → вкладка Network.
+      3. Обновить страницу.
+      4. Найти запрос "data:image/svg+xml".
+    expected-result: |
+      SVG-иконка должна загружаться успешно (статус 200).
+    actual-result: |
+      Запрос возвращает статус 500. Иконка не отображается.
+
+  - summary: |
+      Переключение языка интерфейса на русский (не исправлено)
+    environment: |
+      Google Chrome (последняя стабильная версия)
+      ОС: любая
+      URL: https://products-store-v2.hexlet.app
+    steps-to-reproduce: |
+      1. Открыть сайт https://products-store-v2.hexlet.app.
+      2. Нажать на переключатель языка и выбрать "Русский".
+    expected-result: |
+      Интерфейс полностью переключается на русский язык.
+    actual-result: |
+      Описание товаров, названия категорий не переключаются на русский язык.
+
+  - summary: |
+      Некорректное отображение на мобильных устройствах
+    environment: |
+      Google Chrome (эмуляция iPhone 12 / Pixel 5)
+      ОС: любая
+      URL: https://products-store-v2.hexlet.app
+    steps-to-reproduce: |
+      1. Открыть сайт в режиме эмуляции мобильного устройства.
+      2. Оценить отображение элементов.
+    expected-result: |
+      Все элементы отображаются полностью, текст читаем, кнопки достаточного размера.
+    actual-result: |
+      Поле поиска не полностью видно. Надпись кнопки "Оформить заказ" выходит за границы кнопки.
+
+  - summary: |
+      Проблемы с отображением на десктопе при разных разрешениях экрана
+    environment: |
+      Google Chrome (последняя стабильная версия)
+      ОС: Windows 10 / macOS
+      URL: https://products-store-v2.hexlet.app
+    steps-to-reproduce: |
+      1. Открыть сайт на десктопе с разрешением 1920x1080.
+      2. Изменить размер окна до 1366x768.
+      3. Оценить расположение карточек товаров и фильтров.
+    expected-result: |
+      Элементы плавно подстраиваются, сетка товаров читаема.
+    actual-result: |
+      Картинка не адаптируется под ширину экрана. Размеры кнопок маленькие. Эффект усугубляется высоким CLS (0.31).
