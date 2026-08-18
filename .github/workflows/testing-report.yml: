@@ -1,128 +1,128 @@
 ---
-    - summary: |
+- summary: |
         Успешный поиск товаров по ключевому слову
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Поиск товаров по несуществующему ключевому слову
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Успешная фильтрация товаров по категории
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Просмотр подробной информации о товаре
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Добавление товара в корзину со страницы товара
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Добавление нескольких товаров в корзину
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Просмотр содержимого корзины с товарами
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Просмотр пустой корзины
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Удаление товара из корзины
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Переключение языка интерфейса на английский
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Переключение языка интерфейса на русский
-      status: fail
+  status: fail
 
-    - summary: |
+- summary: |
         Удобство использования — наличие поиска и фильтрации на видном месте
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Удобство использования — понятные подписи к элементам
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Скорость работы — время загрузки главной страницы
-      status: fail
+  status: fail
 
-    - summary: |
+- summary: |
         Скорость работы — время ответа при поиске и фильтрации
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Безопасность — использование HTTPS
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Безопасность — отсутствие передачи конфиденциальных данных в открытом виде
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Наличие мобильной версии — корректное отображение на мобильном устройстве
-      status: fail
+  status: fail
 
-    - summary: |
+- summary: |
         Наличие мобильной версии — работа функционала на мобильном устройстве
-      status: fail
+  status: fail
 
-    - summary: |
+- summary: |
         Совместимость с браузерами — Google Chrome (последняя версия)
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Совместимость с браузерами — Mozilla Firefox (последняя версия)
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Совместимость с браузерами — Apple Safari (последняя версия)
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Совместимость с браузерами — Microsoft Edge (последняя версия)
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Обработка большого трафика — стабильность работы при нагрузке
-      status: fail
+  status: fail
 
-    - summary: |
+- summary: |
         Доступность на различных устройствах — десктоп
-      status: fail
+  status: fail
 
-    - summary: |
+- summary: |
         Доступность на различных устройствах — планшет
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Доступность без VPN — открытие сайта из разных регионов
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Сохранение состояния корзины после перезагрузки страницы
-      status: pass
+  status: pass
 
-    - summary: |
+- summary: |
         Сохранение состояния корзины после закрытия и повторного открытия браузера
-      status: fail
+  status: fail
 
-    - summary: |
+- summary: |
         Обратная связь при добавлении товара в корзину
-      status: fail
+  status: fail
 
-    - summary: |
+- summary: |
         Обратная связь при удалении товара из корзины
-      status: fail
+  status: fail
 
-    - summary: |
+- summary: |
         Обработка пустых результатов поиска
-      status: pass
+  status: pass
